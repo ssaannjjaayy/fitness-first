@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "db_fitnessfirst.h"
+#include "home.h"
 
 namespace Ui {
 class fitnessFirst;
@@ -31,6 +32,8 @@ private slots:
 
 private:
     Ui::fitnessFirst *ui;
+    Home* home;
+
 };
 
 #endif // FITNESSFIRST_H

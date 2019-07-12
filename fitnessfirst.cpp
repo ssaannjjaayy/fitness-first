@@ -1,6 +1,7 @@
 #include "fitnessfirst.h"
 #include "ui_fitnessfirst.h"
 #include<QDebug>
+#include<QMovie>
 
 fitnessFirst::fitnessFirst(QWidget *parent) :
     QMainWindow(parent),
@@ -79,7 +80,11 @@ void fitnessFirst::on_pushButton_clicked()
       qDebug()<<"LOgin failded";
      }else {
          qDebug()<<"LOgin Success";
+         this->hide();
+        home = new Home(this, username);
+        home->show();
      }
+
 
 }
 

@@ -26,15 +26,19 @@ CONFIG += c++11
 
 SOURCES += \
         db_fitnessfirst.cpp \
+        home.cpp \
         main.cpp \
         fitnessfirst.cpp
 
 HEADERS += \
         db_fitnessfirst.h \
-        fitnessfirst.h
+        fitnessfirst.h \
+        home.h
 
 FORMS += \
-        fitnessfirst.ui
+        fitnessfirst.ui \
+        home.ui \
+        homepage.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
