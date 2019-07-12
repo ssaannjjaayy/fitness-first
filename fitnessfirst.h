@@ -27,6 +27,8 @@ private slots:
 
     void on_registerDone_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::fitnessFirst *ui;
 };

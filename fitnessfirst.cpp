@@ -1,6 +1,6 @@
 #include "fitnessfirst.h"
 #include "ui_fitnessfirst.h"
-
+#include<QDebug>
 
 fitnessFirst::fitnessFirst(QWidget *parent) :
     QMainWindow(parent),
@@ -38,13 +38,13 @@ void fitnessFirst::on_registerDone_clicked()
 {
     QString firstName , lastName , username , password , gender , weight , height , age ;
     firstName = ui->s_lineeditfirstname->text();
-    lastName = ui->s_lineeditfirstname->text();
-    username = ui->s_lineeditfirstname->text();
-    password = ui->s_lineeditfirstname->text();
-    gender = ui->s_lineeditfirstname->text();
-     weight = ui->s_lineeditfirstname->text();
-     height = ui->s_lineeditfirstname->text();
-     age = ui->s_lineeditfirstname->text();
+    lastName = ui->s_lineeditlastname->text();
+    username = ui->s_lineeditusername->text();
+    password = ui->s_lineeditpassword->text();
+    gender = ui->s_lineeditgender->text();
+     weight = ui->s_lineeditweight->text();
+     height = ui->s_lineeditheight->text();
+     age = ui->s_lineeditage->text();
 
      if(firstName == "") {
        //show error
@@ -54,16 +54,33 @@ void fitnessFirst::on_registerDone_clicked()
          db_fitnessFirst db_f1("database.db") ;
          db_f1.createTable();
          db_f1.addUser(
-             firstName,
-             lastName,
              username,
              password,
+             firstName,
+             lastName,
              gender,
-             weight,
+             age,
              height,
-             age
+             weight
+
          );
      }
 
 
 }
+
+void fitnessFirst::on_pushButton_clicked()
+{
+    QString username , password ;
+     username = ui-> loginusername ->text();
+     password = ui-> loginpass ->text();
+     db_fitnessFirst db_f1("database.db") ;
+     if(!db_f1.userAuth(username,password)){
+      qDebug()<<"LOgin failded";
+     }else {
+         qDebug()<<"LOgin Success";
+     }
+
+}
+
+

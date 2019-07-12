@@ -137,7 +137,7 @@ bool  db_fitnessFirst::userAuth(const QString &email, const QString &pass)const{
     bool exists = false;
 
     QSqlQuery checkQuery;
-    checkQuery.prepare("SELECT email FROM user WHERE email = (:email) AND pass = (:pass)");
+    checkQuery.prepare("SELECT username FROM user WHERE username = (:email) AND pass = (:pass)");
     checkQuery.bindValue(":email", email);
     checkQuery.bindValue(":pass", pass);
     if (checkQuery.exec()){
