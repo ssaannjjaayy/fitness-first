@@ -38,7 +38,8 @@ void fitnessFirst::on_registerButton_clicked()
 
 void fitnessFirst::on_registerDone_clicked()
 {
-    QString firstName , lastName , username , password , gender , weight , height , age ;
+    //bool ok = false ;
+    QString firstName , lastName , username , password , gender , weight , height , age , bmicalc ;
     firstName = ui->s_lineeditfirstname->text();
     lastName = ui->s_lineeditlastname->text();
     username = ui->s_lineeditusername->text();
@@ -47,7 +48,8 @@ void fitnessFirst::on_registerDone_clicked()
     weight = ui->s_lineeditweight->text();
     height = ui->s_lineeditheight->text();
     age = ui->s_lineeditage->text();
-
+    bmicalc ="anything";
+   // bmicalc.toDouble(&ok) = weight.toDouble(&ok) * ((height.toDouble(&ok)/100)*(height.toDouble(&ok)/100)) ;
      if(firstName == "") {
        QMessageBox::information(this,"REGISTER FAILED","enter first name \n ");
      }
@@ -83,7 +85,8 @@ void fitnessFirst::on_registerDone_clicked()
              gender,
              age,
              height,
-             weight
+             weight,
+             bmicalc
                      );
      }
 
@@ -100,7 +103,7 @@ void fitnessFirst::on_pushButton_clicked()
     db_fitnessFirst db_f1("database.db") ;
 
     if(!db_f1.userAuth(username,password)){
-      qDebug()<<"LOgin failded";
+      qDebug()<<"Login failed";
       QMessageBox::information(this,"LOGIN FAILED","Login failed  \n enter your data again ");
        }
     else {

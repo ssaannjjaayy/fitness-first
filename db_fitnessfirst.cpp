@@ -36,7 +36,7 @@ bool  db_fitnessFirst::createTable()
     bool success = false;
 
     QSqlQuery query;
-    query.prepare("CREATE TABLE user(id INTEGER PRIMARY KEY, username TEXT,pass TEXT, fname TEXT, lname TEXT, gender TEXT, age TEXT,height TEXT, weight TEXT);");
+    query.prepare("CREATE TABLE user(id INTEGER PRIMARY KEY, username TEXT,pass TEXT, fname TEXT, lname TEXT, gender TEXT, age TEXT,height TEXT, weight TEXT, bmicalc TEXT);");
 
     if (!query.exec())
     {
@@ -47,10 +47,10 @@ bool  db_fitnessFirst::createTable()
     return success;
 }
 
-bool  db_fitnessFirst::addUser(const QString& username,const QString& password,const QString& fname,const QString& lname,const QString& gender,const QString& age,const QString& height, const QString& weight){
+bool  db_fitnessFirst::addUser(const QString& username,const QString& password,const QString& fname,const QString& lname,const QString& gender,const QString& age,const QString& height, const QString& weight,const QString& bmicalc){
     bool success = false;
     QSqlQuery queryAdd;
-    queryAdd.prepare("INSERT INTO user(username, pass, fname, lname, gender, age, height, weight) VALUES (:username, :pass, :fname, :lname, :gender, :age ,:height , :weight)");
+    queryAdd.prepare("INSERT INTO user(username, pass, fname, lname, gender, age, height, weight,bmicalc) VALUES (:username, :pass, :fname, :lname, :gender, :age ,:height , :weight ,:bmicalc)");
     queryAdd.bindValue(":username", username);
     queryAdd.bindValue(":pass", password);
     queryAdd.bindValue(":fname",fname);
@@ -59,6 +59,7 @@ bool  db_fitnessFirst::addUser(const QString& username,const QString& password,c
     queryAdd.bindValue(":age",age);
     queryAdd.bindValue(":height",height);
     queryAdd.bindValue(":weight",weight);
+    queryAdd.bindValue(":bmi",bmicalc);
 
     if(!queryAdd.exec()){
         qDebug() << "add user failed: " << queryAdd.lastError();
@@ -133,12 +134,12 @@ bool  db_fitnessFirst::removeAllUsers()
     return success;
 }
 
-bool  db_fitnessFirst::userAuth(const QString &email, const QString &pass)const{
+bool  db_fitnessFirst::userAuth(const QString &username, const QString &pass)const{
     bool exists = false;
 
     QSqlQuery checkQuery;
-    checkQuery.prepare("SELECT username FROM user WHERE username = (:email) AND pass = (:pass)");
-    checkQuery.bindValue(":email", email);
+    checkQuery.prepare("SELECT username FROM user WHERE username = (:username) AND pass = (:pass)");
+    checkQuery.bindValue(":username", username);
     checkQuery.bindValue(":pass", pass);
     if (checkQuery.exec()){
         if (checkQuery.next()){

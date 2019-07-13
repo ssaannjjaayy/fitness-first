@@ -42,7 +42,7 @@ public:
      * @param weight
      * @return true - person added successfully, false - person not added
      */
-    bool addUser(const QString& username,const QString& password,const QString& fname,const QString& lname,const QString& gender,const QString& age,const QString& height, const QString& weight);
+    bool addUser(const QString& username,const QString& password,const QString& fname,const QString& lname,const QString& gender,const QString& age,const QString& height, const QString& weight, const QString& bmicalc);
 
     /**
      * @brief Remove users data from db
