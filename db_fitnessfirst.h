@@ -32,12 +32,14 @@ public:
 
     /**
      * @brief Add user data to db
-     * @param email - email of user to add. email is unique
+     * @param username - email of user to add. email is unique
      * @param password - password of user to add
      * @param fname
      * @param lname
-     * @param addr
-     * @param phn
+     * @param gender
+     * @param age
+     * @param height
+     * @param weight
      * @return true - person added successfully, false - person not added
      */
     bool addUser(const QString& username,const QString& password,const QString& fname,const QString& lname,const QString& gender,const QString& age,const QString& height, const QString& weight);
@@ -76,13 +78,13 @@ public:
      * @brief Get all the user data from the database
      * @return Returns list of strings
      */
-    QList<QString> getUserInfo(const QString& email)const;
+     QList<QString> getUserInfo(const QString& email)const;
 
     /**
      * @brief Get all the email/id of the registerd users from database
      * @return Returns list of strings
      */
-    QList<QString> getAllUsers();
+     QList<QString> getAllUsers();
 
 private:
     QSqlDatabase m_db;

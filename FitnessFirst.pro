@@ -31,16 +31,19 @@ SOURCES += \
         fitnessfirst.cpp
 
 HEADERS += \
+        bmi.h \
         db_fitnessfirst.h \
         fitnessfirst.h \
         home.h
 
 FORMS += \
         fitnessfirst.ui \
-        home.ui \
-        homepage.ui
+        home.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resources.qrc

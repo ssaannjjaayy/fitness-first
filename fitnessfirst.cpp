@@ -2,6 +2,7 @@
 #include "ui_fitnessfirst.h"
 #include<QDebug>
 #include<QMovie>
+#include<QMessageBox>
 
 fitnessFirst::fitnessFirst(QWidget *parent) :
     QMainWindow(parent),
@@ -43,14 +44,34 @@ void fitnessFirst::on_registerDone_clicked()
     username = ui->s_lineeditusername->text();
     password = ui->s_lineeditpassword->text();
     gender = ui->s_lineeditgender->text();
-     weight = ui->s_lineeditweight->text();
-     height = ui->s_lineeditheight->text();
-     age = ui->s_lineeditage->text();
+    weight = ui->s_lineeditweight->text();
+    height = ui->s_lineeditheight->text();
+    age = ui->s_lineeditage->text();
 
      if(firstName == "") {
-       //show error
+       QMessageBox::information(this,"REGISTER FAILED","enter first name \n ");
      }
+     if(lastName == "") {
+       QMessageBox::information(this,"REGISTER FAILED","enter last name \n ");
+     }
+     if(username == "") {
+       QMessageBox::information(this,"REGISTER FAILED","enter username \n ");
+     }
+     if(password == "") {
+       QMessageBox::information(this,"REGISTER FAILED","enter password \n ");
+     }
+     if(gender == "") {
+       QMessageBox::information(this,"REGISTER FAILED","enter gender \n ");
+     }
+     if(weight == "") {
+       QMessageBox::information(this,"REGISTER FAILED","enter weight \n ");
+     }
+     if(height == "") {
+       QMessageBox::information(this,"REGISTER FAILED","enter height \n ");
+     }
+
      else {
+         QMessageBox::information(this,"REGISTER SUCCESSFUL","Registration process is successful \nNow you can login in  ");
          //add into database
          db_fitnessFirst db_f1("database.db") ;
          db_f1.createTable();
@@ -63,8 +84,7 @@ void fitnessFirst::on_registerDone_clicked()
              age,
              height,
              weight
-
-         );
+                     );
      }
 
 
@@ -73,16 +93,22 @@ void fitnessFirst::on_registerDone_clicked()
 void fitnessFirst::on_pushButton_clicked()
 {
     QString username , password ;
-     username = ui-> loginusername ->text();
-     password = ui-> loginpass ->text();
-     db_fitnessFirst db_f1("database.db") ;
-     if(!db_f1.userAuth(username,password)){
+
+    username = ui-> loginusername ->text();
+    password = ui-> loginpass ->text();
+
+    db_fitnessFirst db_f1("database.db") ;
+
+    if(!db_f1.userAuth(username,password)){
       qDebug()<<"LOgin failded";
-     }else {
+      QMessageBox::information(this,"LOGIN FAILED","Login failed  \n enter your data again ");
+       }
+    else {
          qDebug()<<"LOgin Success";
+         QMessageBox::information(this,"LOGIN SUCCESS","Login successful  \n enjoy ! ");
          this->hide();
-        home = new Home(this, username);
-        home->show();
+         home = new Home(this, username);
+         home->show();
      }
 
 
