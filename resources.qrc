@@ -2,4 +2,11 @@
     <qresource prefix="/.img">
         <file>ss.jpg</file>
     </qresource>
+    <qresource prefix="/">
+        <file>dite1.jpg</file>
+        <file>bmi.jpg</file>
+        <file>BMI.png</file>
+        <file>developer.jpg</file>
+    </qresource>
+    <qresource prefix="/.txt"/>
 </RCC>
