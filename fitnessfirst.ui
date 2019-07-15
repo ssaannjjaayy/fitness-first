@@ -17,26 +17,26 @@
    <widget class="QStackedWidget" name="mainStack">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>110</y>
-      <width>861</width>
-      <height>471</height>
+      <x>0</x>
+      <y>90</y>
+      <width>901</width>
+      <height>491</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(85, 170, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>50</y>
-        <width>471</width>
-        <height>261</height>
+        <x>0</x>
+        <y>0</y>
+        <width>901</width>
+        <height>491</height>
        </rect>
       </property>
       <property name="font">
@@ -133,7 +133,7 @@
        <string>done</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>80</x>
@@ -159,7 +159,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>260</x>
@@ -282,11 +282,38 @@
    <widget class="QPushButton" name="homeButton">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>50</y>
-      <width>93</width>
-      <height>28</height>
+      <x>30</x>
+      <y>10</y>
+      <width>191</width>
+      <height>81</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+ QPushButton{
+	-moz-box-shadow: -9px 7px 0px -1px #13330a;
+	-webkit-box-shadow: -9px 7px 0px -1px #13330a;
+	box-shadow: -9px 7px 0px -1px #13330a;
+	background-color:#e6254c;
+	-moz-border-radius:42px;
+	-webkit-border-radius:42px;
+	border-radius:42px;
+	border:3px solid #801e26;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:27px;
+	padding:14px 33px;
+	text-decoration:none;
+}
+QPushButton:hover {
+	background-color:#c92667;
+}
+QPushButton:active {
+	position:relative;
+	top:1px;
+}</string>
     </property>
     <property name="text">
      <string>Home</string>
@@ -295,11 +322,16 @@
    <widget class="QPushButton" name="loginButton">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>50</y>
-      <width>93</width>
-      <height>28</height>
+      <x>340</x>
+      <y>10</y>
+      <width>171</width>
+      <height>81</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton { -moz-box-shadow: -9px 7px 0px -1px #13330a; -webkit-box-shadow: -9px 7px 0px -1px #13330a; box-shadow: -9px 7px 0px -1px #13330a; background-color:#e6254c; -moz-border-radius:42px; -webkit-border-radius:42px; border-radius:42px; border:3px solid #801e26; display:inline-block; cursor:pointer; color:#ffffff; font-family:Arial; font-size:27px; padding:14px 33px; text-decoration:none; }
+QPushButton:hover { background-color:#c92667; }
+QPushButton:active { position:relative; top:1px; } </string>
     </property>
     <property name="text">
      <string>Login</string>
@@ -308,16 +340,65 @@
    <widget class="QPushButton" name="registerButton">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>50</y>
-      <width>93</width>
-      <height>28</height>
+      <x>630</x>
+      <y>10</y>
+      <width>191</width>
+      <height>81</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+ QPushButton{
+	-moz-box-shadow: -9px 7px 0px -1px #13330a;
+	-webkit-box-shadow: -9px 7px 0px -1px #13330a;
+	box-shadow: -9px 7px 0px -1px #13330a;
+	background-color:#e6254c;
+	-moz-border-radius:42px;
+	-webkit-border-radius:42px;
+	border-radius:42px;
+	border:3px solid #801e26;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:27px;
+	padding:14px 33px;
+	text-decoration:none;
+}
+QPushButton:hover {
+	background-color:#c92667;
+}
+QPushButton:active {
+	position:relative;
+	top:1px;
+}</string>
     </property>
     <property name="text">
      <string>Register</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-20</y>
+      <width>901</width>
+      <height>631</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 0, 4);
+background-color: rgb(255, 1, 5);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label_3</zorder>
+   <zorder>mainStack</zorder>
+   <zorder>homeButton</zorder>
+   <zorder>loginButton</zorder>
+   <zorder>registerButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

@@ -44,6 +44,8 @@ public:
      */
     bool addUser(const QString& username,const QString& password,const QString& fname,const QString& lname,const QString& gender,const QString& age,const QString& height, const QString& weight, const QString& bmicalc);
 
+    bool addBmiData(const QString& username, const QString& bmi);
+
     /**
      * @brief Remove users data from db
      * @param email - email of user to remove.
@@ -86,7 +88,7 @@ public:
      */
      QList<QString> getAllUsers();
 
-private:
+public:
     QSqlDatabase m_db;
 };
 

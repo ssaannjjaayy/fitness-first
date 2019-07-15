@@ -32,6 +32,7 @@ SOURCES += \
 
 HEADERS += \
         bmi.h \
+        calories.h \
         db_fitnessfirst.h \
         fitnessfirst.h \
         home.h

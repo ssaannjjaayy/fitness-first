@@ -1,6 +1,6 @@
 #include "db_fitnessfirst.h"
 
-
+#include<QtSql>
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QSqlRecord>
@@ -59,7 +59,7 @@ bool  db_fitnessFirst::addUser(const QString& username,const QString& password,c
     queryAdd.bindValue(":age",age);
     queryAdd.bindValue(":height",height);
     queryAdd.bindValue(":weight",weight);
-    queryAdd.bindValue(":bmi",bmicalc);
+    queryAdd.bindValue(":bmicalc",bmicalc);
 
     if(!queryAdd.exec()){
         qDebug() << "add user failed: " << queryAdd.lastError();
@@ -99,6 +99,23 @@ void  db_fitnessFirst::printAllUsers() const{
     }
 }
 
+
+bool db_fitnessFirst::addBmiData(const QString &username, const QString &bmi){
+    QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE");
+    QSqlQuery addQuery(mydb);
+   // addQuery.prepare("UPDATE user SET bmicalc = (:bmi) WHERE username = (:username)");
+    addQuery.exec("INSERT INTO user (bmicalc) VALUES('"+bmi+"') WHERE username =("+username+");");
+    addQuery.bindValue(":bmicalc",bmi);
+    addQuery.bindValue(":username",username);
+    if(addQuery.exec()){
+        qDebug()<<"Added sucess fully"<<username<<bmi;
+        return  true;
+    }else{
+        qDebug()<<"It was called";
+        qDebug()<<addQuery.lastError()<<username<<bmi;
+        return false;
+    }
+}
 
 
 bool  db_fitnessFirst::emailExists(const QString &email){
