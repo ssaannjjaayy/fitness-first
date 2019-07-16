@@ -40,36 +40,19 @@ void Home::on_pushButton_2_clicked()
 
 void Home::on_pushButton_3_clicked()
 {
-        db_fitnessFirst db_f1("database.db") ;
-      /*QSqlDatabase mydb = QSqlDatabase::addDatabase("ODBC");
-      mydb.setConnectOptions();
-      mydb.setDatabaseName("D:/qt/build-FitnessFirst-Desktop_Qt_5_12_3_MinGW_32_bit-Debug/database.db");*/
-    double weight = ui-> lineEdit_2 -> text().toDouble();
+       db_fitnessFirst db_f1("database.db") ;
 
-    double height = ui-> lineEdit-> text().toDouble();
-    bmi b1(height,weight);
+       double weight = ui-> lineEdit_2 -> text().toDouble();
 
-    ui->label_4-> setText(QString::number( b1.calculateBMI() ));
-    QString bmival = QString::number(b1.calculateBMI());
-    //QString stmt = "select * from user where Username='"+ username +"'";
+       double height = ui-> lineEdit-> text().toDouble();
+       bmi b1(height,weight);
+       ui->label_4-> setText(QString::number( b1.calculateBMI() ));
 
-//    QSqlQuery qry;
-//    QString a;
-//    if(db_f1.userAuth(username,a))
-//    {
+       QString bmival = QString::number(b1.calculateBMI());
 
-//        QSqlQuery queryAdd;
-//        queryAdd.prepare("INSERT INTO user(bmicalc) VALUES (:bmival);");
-//        /*int count = 0;
-
-//        while(qry.next())
-//            count++;
-//        if( count == 1 ){
-//            qry.exec("INSERT INTO user (bmicalc) VALUES('"+bmival+"');");
-//          }*/
-//    }
-    qDebug()<<username;
-    db_f1.addBmiData(username,bmival);
+       qDebug()<<bmival;
+       qDebug()<<username;
+       db_f1.addBmiData(username,bmival);
 
 
 }
@@ -164,7 +147,7 @@ void Home::on_pushButton_6_clicked()
 
 
      //total = calc + calc2 + calc3 ;
-    ui->label_7->setText("You will consume total calorie of"+QString::number(total)+"Cal");
+    ui->label_7->setText("You will consume total calorie of "+QString::number(total)+" Cal");
 }
 
 void Home::on_pushButton_7_clicked()

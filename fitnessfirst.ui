@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>90</y>
+      <y>100</y>
       <width>901</width>
       <height>491</height>
      </rect>
@@ -27,7 +27,7 @@
      <string notr="true">background-color: rgb(85, 170, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label">
@@ -123,56 +123,46 @@
      <widget class="QPushButton" name="registerDone">
       <property name="geometry">
        <rect>
-        <x>570</x>
-        <y>360</y>
-        <width>93</width>
-        <height>28</height>
+        <x>600</x>
+        <y>370</y>
+        <width>151</width>
+        <height>61</height>
        </rect>
       </property>
       <property name="text">
        <string>done</string>
       </property>
      </widget>
-     <widget class="QWidget" name="layoutWidget">
+     <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>180</y>
-        <width>139</width>
-        <height>47</height>
+        <x>0</x>
+        <y>5</y>
+        <width>901</width>
+        <height>471</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_8">
-       <item>
-        <widget class="QLabel" name="s_labelgender_3">
-         <property name="text">
-          <string>Weight</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="s_lineeditweight">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/register.jpg);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
      </widget>
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>260</x>
-        <y>20</y>
-        <width>147</width>
-        <height>371</height>
+        <x>40</x>
+        <y>30</y>
+        <width>521</width>
+        <height>331</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_10">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_7">
+        <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_5">
+          <layout class="QVBoxLayout" name="verticalLayout">
            <item>
             <widget class="QLabel" name="s_labellastname_2">
              <property name="text">
@@ -181,64 +171,66 @@
             </widget>
            </item>
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout_4">
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_3">
-               <item>
-                <widget class="QLineEdit" name="s_lineeditfirstname"/>
-               </item>
-               <item>
-                <widget class="QLabel" name="s_labellastname">
-                 <property name="text">
-                  <string>Last Name</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="s_lineeditlastname"/>
-               </item>
-               <item>
-                <widget class="QLabel" name="s_labelusername">
-                 <property name="text">
-                  <string>Username</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="s_lineeditusername"/>
-               </item>
-               <item>
-                <widget class="QLabel" name="s_labelpassword">
-                 <property name="text">
-                  <string>Password</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="s_lineeditpassword">
-                 <property name="echoMode">
-                  <enum>QLineEdit::Password</enum>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="s_labelgender">
-                 <property name="text">
-                  <string>Gender(M/F)</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="s_lineeditgender"/>
-               </item>
-              </layout>
-             </item>
-            </layout>
+            <widget class="QLineEdit" name="s_lineeditfirstname"/>
            </item>
           </layout>
          </item>
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_6">
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLabel" name="s_labellastname">
+             <property name="text">
+              <string>Last Name</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="s_lineeditlastname"/>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
+            <widget class="QLabel" name="s_labelusername">
+             <property name="text">
+              <string>Username</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="s_lineeditusername"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_12">
+           <item>
+            <widget class="QLabel" name="s_labelpassword">
+             <property name="text">
+              <string>Password</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="s_lineeditpassword">
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_14">
            <item>
             <widget class="QLabel" name="s_labelgender_4">
              <property name="text">
@@ -255,28 +247,67 @@
            </item>
           </layout>
          </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_13">
+           <item>
+            <widget class="QLabel" name="s_labelgender">
+             <property name="text">
+              <string>Gender(M/F)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="s_lineeditgender"/>
+           </item>
+          </layout>
+         </item>
         </layout>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_9">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QLabel" name="s_labelgender_2">
-           <property name="text">
-            <string>Height</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_15">
+           <item>
+            <widget class="QLabel" name="s_labelgender_2">
+             <property name="text">
+              <string>Height</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="s_lineeditheight">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QLineEdit" name="s_lineeditheight">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <widget class="QLabel" name="s_labelgender_3">
+             <property name="text">
+              <string>Weight</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="s_lineeditweight">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </item>
       </layout>
      </widget>
+     <zorder>label_5</zorder>
+     <zorder>registerDone</zorder>
+     <zorder>layoutWidget</zorder>
     </widget>
    </widget>
    <widget class="QPushButton" name="homeButton">

@@ -7,6 +7,8 @@
         <file>bmi.jpg</file>
         <file>BMI.png</file>
         <file>developer.jpg</file>
+        <file>login.jpg</file>
+        <file>register.jpg</file>
     </qresource>
     <qresource prefix="/.txt"/>
 </RCC>
