@@ -131,6 +131,35 @@ bool  db_fitnessFirst::emailExists(const QString &email){
     }
     return false;
 }
+double db_fitnessFirst::checkbmifordiet(const QString &username){
+      QSqlQuery checkQuery;
+      checkQuery.prepare("SELECT bmicalc FROM user WHERE username =('"+ username +"')");
+      if(checkQuery.exec()) {
+          while(checkQuery.next()){
+              return checkQuery.value(0).toDouble();
+//          int num=checkQuery.value(0).toInt();
+//          if(num>=190000&&num<=240000){
+
+//            }
+//          else if (num<190000) {
+
+//            }
+//          else if (num>240000) {
+
+//            }
+      }
+}
+}
+//                  if(bmi>=19 && bmi<=24){
+//                      ui->dietsuggestion_textBrowser
+//                    }
+//                  else if(bmi<19){
+
+//                    }
+//                  else if (bmi>24) {
+
+//                    }
+
 
 bool  db_fitnessFirst::removeAllUsers()
 {

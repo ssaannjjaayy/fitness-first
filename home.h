@@ -1,7 +1,10 @@
+#include"mainwindow.h"
 #ifndef HOME_H
 #define HOME_H
 
 #include <QMainWindow>
+
+#include"timer.h"
 
 namespace Ui {
 class Home;
@@ -34,9 +37,15 @@ private slots:
 
     void on_pushButton_8_clicked();
 
+    void on_pushButton_exercise_clicked();
+
+    void on_pushButton_dietsuggestion_clicked();
+
 private:
     Ui::Home *ui;
     QString username;
+    MainWindow *mainwindow;
+
 };
 
 #endif // HOME_H

@@ -28,18 +28,23 @@ SOURCES += \
         db_fitnessfirst.cpp \
         home.cpp \
         main.cpp \
-        fitnessfirst.cpp
+        fitnessfirst.cpp \
+        mainwindow.cpp \
+        timer.cpp
 
 HEADERS += \
         bmi.h \
         calories.h \
         db_fitnessfirst.h \
         fitnessfirst.h \
-        home.h
+        home.h \
+        mainwindow.h \
+        timer.h
 
 FORMS += \
         fitnessfirst.ui \
-        home.ui
+        home.ui \
+        mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -47,4 +52,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    diet.qrc \
+    exercises.qrc \
     resources.qrc

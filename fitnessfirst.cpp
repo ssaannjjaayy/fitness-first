@@ -10,6 +10,10 @@ fitnessFirst::fitnessFirst(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->mainStack->setCurrentIndex(0);
+    QPixmap pix("C:/Users/manish baral/Desktop/project pictures/BM");
+    ui->label->setPixmap(pix.scaled(900,500));
+
+
 }
 
 fitnessFirst::~fitnessFirst()
@@ -33,6 +37,7 @@ void fitnessFirst::on_loginButton_clicked()
 void fitnessFirst::on_registerButton_clicked()
 {
     ui->mainStack->setCurrentIndex(2);
+
 
 }
 

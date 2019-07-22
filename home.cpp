@@ -8,6 +8,13 @@
 #include <QSqlError>
 #include <QSqlRecord>
 #include <QDebug>
+#include <QFile>
+#include <QMessageBox>
+#include <QTextStream>
+#include"mainwindow.h"
+#include "timer.h"
+#include<QDebug>
+
 
 
 Home::Home(QWidget *parent,QString username) :
@@ -147,7 +154,7 @@ void Home::on_pushButton_6_clicked()
 
 
      //total = calc + calc2 + calc3 ;
-    ui->label_7->setText("You will consume total calorie of "+QString::number(total)+" Cal");
+    ui->label_7->setText("Total calorie :"+QString::number(total)+" Cal");
 }
 
 void Home::on_pushButton_7_clicked()
@@ -161,3 +168,60 @@ void Home::on_pushButton_8_clicked()
      ui->homeStack->setCurrentIndex(5);
 
 }
+
+void Home::on_pushButton_exercise_clicked()
+{
+  mainwindow = new MainWindow(this);
+  mainwindow->show();
+}
+
+void Home::on_pushButton_dietsuggestion_clicked()
+{
+
+  db_fitnessFirst db_f1("database.db") ;
+  double num=db_f1.checkbmifordiet(username);
+  qDebug()<<num;
+
+
+            if(num>=190000&&num<=240000){
+                ui->homeStack->setCurrentIndex(5);
+                QFile file(":/diet/diet/overweight.txt");
+
+                if (!file.open(QFile::ReadOnly | QFile::Text))
+                    QMessageBox::warning(this,"title","File not open.");
+                QTextStream in(&file);
+                QString text  = in.readAll();
+                ui->dietsuggestion_textBrowser->setText(text);
+//                QFile file(":/diet/diet/overweight.txt");
+//                if (!file.open(QFile::ReadOnly | QFile::Text)){
+//                    QMessageBox::warning(this,"title","File not open.");
+
+
+//                }
+//                QTextStream in(&file);
+//               QString text  = in.readAll();
+//               QMessageBox msg;
+//              msg.setText(text);
+//              msg.exec();
+              }
+
+//               file.close();
+            else if (num>240000) {
+                ui->homeStack->setCurrentIndex(5);
+                QFile file(":/diet/diet/overweight.txt");
+                QTextStream in(&file);
+                if (!file.open(QFile::ReadOnly | QFile::Text))
+                  QMessageBox::warning(this,"title","File not open.");
+                ui->dietsuggestion_textBrowser->setText(in.readAll());
+          }
+            else if (num<190000) {
+                ui->homeStack->setCurrentIndex(5);
+                QFile file(":/diet/diet/underweight.txt");
+                QTextStream in(&file);
+                if (!file.open(QFile::ReadOnly | QFile::Text))
+                   QMessageBox::warning(this,"title","File not open.");
+                ui->dietsuggestion_textBrowser->setText(in.readAll());
+
+}
+}
+

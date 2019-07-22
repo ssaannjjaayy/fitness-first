@@ -6,7 +6,6 @@
 class calories
 {
 public:
-   // calories();
      virtual double foods()=0;
    // ~calories();
 };

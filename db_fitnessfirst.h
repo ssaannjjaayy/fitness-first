@@ -45,6 +45,7 @@ public:
     bool addUser(const QString& username,const QString& password,const QString& fname,const QString& lname,const QString& gender,const QString& age,const QString& height, const QString& weight, const QString& bmicalc);
 
     bool addBmiData(const QString& username, const QString& bmi);
+    double checkbmifordiet(const QString &username);
 
     /**
      * @brief Remove users data from db
